@@ -17,19 +17,28 @@
       width: 90%;
     }
     #clock {
-      font-size: 48px;
-      margin-top: 20px;
+      font-size: 16px;
     }
     #date {
-      font-size: 32px;
+      font-size: 16px;
     }
     #analog-clock {
       position: relative;
-      width: 200px;
-      height: 200px;
+      width: 300px;
+      height: 300px;
       margin: 20px auto;
-      border: 8px solid #000;
+      border: 10px solid #000;
       border-radius: 50%;
+    }
+    #clock-info {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.5);
     }
     .hand {
       position: absolute;
@@ -72,13 +81,15 @@
 <body>
     <div class="container text-center">
       <h1>時鐘</h1>
-      <div id="date"></div>
-      <div id="clock">00:00:00.000</div>
       <div id="analog-clock">
         <div id="hour-hand" class="hand"></div>
         <div id="minute-hand" class="hand"></div>
         <div id="second-hand" class="hand"></div>
         <div id="center-dot"></div>
+        <div id="clock-info">
+          <div id="date"></div>
+          <div id="clock">00:00:00.000</div>
+        </div>
       </div>
     </div>
   <script>
